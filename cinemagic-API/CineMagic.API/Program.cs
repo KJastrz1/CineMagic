@@ -28,13 +28,13 @@ builder.Services.AddScoped<IRatingService, CineMagic.API.Services.MovieService.R
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<CineMagic.API.Services.FileService>();
 builder.Services.AddScoped<UserSeeder>();
+builder.Services.AddScoped<MovieSeeder>();
 
 string token = builder.Configuration.GetSection("AppSettings:Token").Value;
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
-    {
-        // options.Authority = "https://localhost:5001";
+    {      
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateAudience = false,
@@ -78,6 +78,13 @@ using (var scope = app.Services.CreateScope())
     dbContext.Database.Migrate();
     var seeder = services.GetRequiredService<UserSeeder>();
     await seeder.SeedUsersAsync();
+
+    var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+    if (environment == "Development")
+    {
+        var movieSeeder = services.GetRequiredService<MovieSeeder>();
+        await movieSeeder.SeedMoviesAsync();
+    }
 }
 
 app.UseCors("MyCorsPolicy");
