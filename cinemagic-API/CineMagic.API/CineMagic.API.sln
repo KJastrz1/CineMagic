@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CineMagic.API", "CineMagic.API.csproj", "{AC0A148E-4A54-48E2-BE8D-BC27A4DEFFB6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC0A148E-4A54-48E2-BE8D-BC27A4DEFFB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC0A148E-4A54-48E2-BE8D-BC27A4DEFFB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC0A148E-4A54-48E2-BE8D-BC27A4DEFFB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC0A148E-4A54-48E2-BE8D-BC27A4DEFFB6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62FD12F6-6E33-43AA-96C5-9DB6EBFE8549}
+	EndGlobalSection
+EndGlobal

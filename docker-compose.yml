@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  api:
+    build:
+      context: ./cinemagic-API
+    ports:
+      - "5093:80"
+    depends_on:
+      - db
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=db;Database=cinemagic;User=sa;Password=Password123!;TrustServerCertificate=True;
+      - Cloudinary__CloudName=your_cloudinary_cloud_name
+      - Cloudinary__ApiKey=your_cloudinary_api_key
+      - Cloudinary__ApiSecret=your_cloudinary_api_secret
+
+  frontend:
+    build:
+      context: ./cinemagic-webapp
+      args:
+        - API_URL=http://localhost:5093/api
+        - GOOGLE_AUTH_CLIENT_ID=your_google_auth_client_id
+        - CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+    depends_on:
+      - api
+    ports:
+      - "3006:80"
+
+  db:
+    image: "mcr.microsoft.com/mssql/server:2019-latest"
+    environment:
+      SA_PASSWORD: "Password123!"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1435:1433"
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+
+volumes:
+    sqlserver-data:
+  

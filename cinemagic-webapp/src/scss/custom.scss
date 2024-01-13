@@ -1,0 +1,9 @@
+@import '~bootstrap/scss/bootstrap';
+
+$custom-gold: #f2d307;
+
+.btn-outline-gold {
+    @include button-variant($background: transparent,
+        $border: $custom-gold,
+        $hover-background: $custom-gold);
+}

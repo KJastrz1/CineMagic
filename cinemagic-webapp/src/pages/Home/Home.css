@@ -1,0 +1,28 @@
+.text-block {
+    position: relative;
+    z-index: 1;
+    color: black;
+}
+
+.text-block::before {
+    content: '';
+    position: absolute;
+    width: 110%;
+    height: 110%; 
+    top: -5%; 
+    left: -5%; 
+    background-color: rgb(177, 177, 177);
+    z-index: -1;
+}
+
+.text-block-1::before {
+    transform: rotate(-3deg);
+}
+
+.text-block-2::before {
+    transform: rotate(3deg);
+}
+
+.text-block-3::before {
+    transform: rotate(-2deg);
+}

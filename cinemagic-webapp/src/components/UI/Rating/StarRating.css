@@ -1,0 +1,10 @@
+body[data-theme="light"]  .btn-outline-gold {
+
+    color: black !important;; 
+}
+
+.btn-outline-yellow:hover {
+ 
+    background-color: #f2d307   !important;
+    border-color: #f2d307   !important; 
+} 
