@@ -10,3 +10,13 @@ HOW TO RUN
     `docker-compose up`
 
 4. Web application will be avaible on http://localhost:3006
+
+You can use automatically created accounts:
+    -User account:
+        email: user1@example.com 
+        password: password
+    -Admin account:
+        email: admin@example.com 
+        password: password
+
+Database will be empty. Feel free to add your movies using admin account.
