@@ -23,24 +23,22 @@ namespace CineMagic.DataSeeder
         {
             if (!_context.Movies.Any())
             {
-                var movies = GenerateMovieData(); 
+                var movies = GenerateMovieData();
                 _context.Movies.AddRange(movies);
                 await _context.SaveChangesAsync();
             }
         }
         public List<Movie> GenerateMovieData()
-        {            
-
-            var MovieFaker = new Faker<Movie>("pl")
+        {
+            int id = 1;
+            var movieFaker = new Faker<Movie>("pl")
                 .UseSeed(123456)
-                .RuleFor(x => x.Title, x => x.Commerce.ProductName())              
-                .RuleFor(x => x.Director, x => x.Name.FullName())
-                .RuleFor(x => x.Description, x => x.Lorem.Paragraphs(1))
-                .RuleFor(x => x.ImageUrl, (x, movie) =>
-                    $"https://res.cloudinary.com/{cloudName}/image/upload/v1703685194/movies/{movie.Id}-poster.png");
+                .RuleFor(m => m.Title, f => f.Commerce.ProductName())
+                .RuleFor(m => m.Director, f => f.Name.FullName())
+                .RuleFor(m => m.Description, f => f.Lorem.Paragraphs(1))
+                .RuleFor(m => m.ImageUrl, f => $"https://res.cloudinary.com/{cloudName}/image/upload/v1703685194/movies/{id++}-poster.png");
 
-
-            return MovieFaker.Generate(14).ToList();
+            return movieFaker.Generate(14).ToList();
         }
     }
 }
