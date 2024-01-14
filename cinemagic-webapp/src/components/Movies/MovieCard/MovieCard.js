@@ -20,7 +20,6 @@ const MovieCard = ({ movie }) => {
   } else {
     publicId = 'placeholder'
   }
-  console.log("publicId",publicId);
   myImage = cld.image(publicId);
   myImage.resize(fill().aspectRatio('9:12').height(400));
   myImage.format('auto');
