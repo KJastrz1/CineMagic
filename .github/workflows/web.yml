@@ -25,7 +25,9 @@ jobs:
       - name: Build the React app
         run: npm run build
         working-directory: ./cinemagic-webapp
-
+        env:
+          CI: false
+          
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
