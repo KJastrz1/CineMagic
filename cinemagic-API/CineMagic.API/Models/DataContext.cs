@@ -72,8 +72,8 @@ namespace CineMagic.API.Models
                 .HasOne(mr => mr.User)
                 .WithMany(u => u.Ratings)
                 .HasForeignKey(mr => mr.UserId);
+
            
         }
     }
 }
-

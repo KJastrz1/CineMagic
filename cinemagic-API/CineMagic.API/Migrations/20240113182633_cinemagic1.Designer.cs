@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CineMagic.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240113141803_cinemagic1")]
+    [Migration("20240113182633_cinemagic1")]
     partial class cinemagic1
     {
         /// <inheritdoc />
