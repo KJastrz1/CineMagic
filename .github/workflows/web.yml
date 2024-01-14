@@ -1,3 +1,10 @@
+name: Web App CI/CD
+
+on:
+  push:
+    branches:
+      - master
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
