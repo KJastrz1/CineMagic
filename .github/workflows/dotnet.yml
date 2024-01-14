@@ -33,5 +33,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'cinemagicAPI'    
-          publish-profile: ${{ secrets.PUBLISH_PROFILE_DEV }}
+          publish-profile: ${{ secrets.PUBLISH_PROFILE_DEV_API }}
           package: ${{ github.workspace }}/api
