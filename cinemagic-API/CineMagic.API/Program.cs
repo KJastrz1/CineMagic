@@ -56,19 +56,14 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 
-var allowedOrigins = new List<string>();
-var configSection = builder.Configuration.GetSection("AllowedOrigins");
-foreach (var child in configSection.GetChildren())
-{
-    allowedOrigins.Add(child.Value);
-}
+var allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>();
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("MyCorsPolicy", builder =>
         builder.AllowAnyHeader()
                .AllowAnyMethod()
-               .WithOrigins(allowedOrigins.ToArray())
+               .WithOrigins(allowedOrigins)
                .AllowCredentials());
 });
 
