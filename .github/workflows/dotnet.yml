@@ -15,12 +15,7 @@ jobs:
         uses: actions/setup-dotnet@v2.1.0
         with:
           dotnet-version: 7.0.100          
-      - name: Update AllowedOrigins in appsettings.json
-        run: |
-          # Replace the placeholder with the desired value
-          allowedOrigins=${{ secrets.ALLOWED_ORIGINS }}
-          sed -i 's#__ALLOWED_ORIGINS__#'"$allowedOrigins"'#' ./cinemagic-API/CineMagic.API/appsettings.json
-        working-directory: ${{ github.workspace }}
+
 
       - name: Restore dependences 
         run: dotnet restore ./cinemagic-API/CineMagic.API/CineMagic.API.csproj
