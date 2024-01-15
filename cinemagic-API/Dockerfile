@@ -1,8 +1,6 @@
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 
-ENV ASPNETCORE_ENVIRONMENT=Production
-
 COPY ["CineMagic.sln", "./"]
 COPY ["CineMagic.API/CineMagic.API.csproj", "CineMagic.API/"]
 COPY ["CineMagic.Shared/CineMagic.Shared.csproj", "CineMagic.Shared/"]
