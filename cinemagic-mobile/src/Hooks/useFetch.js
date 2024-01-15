@@ -3,7 +3,7 @@ import { API_URL } from '@env';
 import * as SecureStore from 'expo-secure-store';
 
 const useFetch = (url) => {
-
+    console.log('fetch url',`${API_URL}${url}`)
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);

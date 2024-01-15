@@ -7,6 +7,7 @@ const usePost = () => {
     const [responseData, setResponseData] = useState(null);
 
     const sendRequest = (url, method, data, contentType = 'json') => {
+        console.log('request url',`${API_URL}${url}`)
         setIsPending(true);
         const abortCont = new AbortController();
 

@@ -38,7 +38,7 @@ function MovieDetails() {
     publicId = 'placeholder'
   }
   myImage = cld.image(publicId);
-  myImage.resize(fill().aspectRatio('9:12').height(400));
+  myImage.resize(fill().aspectRatio('9:12').height(800));
   myImage.format('auto');
 
   const [isModalOpen, setIsModalOpen] = useState(false);
