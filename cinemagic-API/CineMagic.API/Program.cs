@@ -56,15 +56,19 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 
-var allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>();
-
+var allowedOrigins = new List<string>();
+var configSection = builder.Configuration.GetSection("AllowedOrigins");
+foreach (var child in configSection.GetChildren())
+{
+    allowedOrigins.Add(child.Value);
+}
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("MyCorsPolicy", builder =>
         builder.AllowAnyHeader()
                .AllowAnyMethod()
-               .WithOrigins(allowedOrigins)
+               .WithOrigins(allowedOrigins.ToArray())
                .AllowCredentials());
 });
 
@@ -80,7 +84,7 @@ using (var scope = app.Services.CreateScope())
     await seeder.SeedUsersAsync();
 
     var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-    if (environment == "Development")
+    if (environment == "Production")
     {
         var movieSeeder = services.GetRequiredService<MovieSeeder>();
         await movieSeeder.SeedMoviesAsync();
