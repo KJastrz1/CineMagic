@@ -23,10 +23,8 @@ export const useLogin = (responseData) => {
                     
                     await SecureStore.setItemAsync('token', jwtToken);
               
-                } catch (error) {
-                    console.error('Error during login process', error);
-                    setErrorLogin("Error during login process, try again later");
-                    console.log(errorLogin)
+                } catch (error) {                  
+                    setErrorLogin("Error during login process, try again later");              
                 }
                 finally {
                     setIsLoadingLogin(false);

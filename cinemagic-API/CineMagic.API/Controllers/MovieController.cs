@@ -25,8 +25,7 @@ namespace CineMagic.API.Controllers
         [HttpGet]
         [Authorize(Roles = "User, Admin")]
         public async Task<ActionResult<ServiceResponse<List<GetMoviePartialDTO>>>> GetMovies()
-        {
-            _logger.Log(LogLevel.Critical, "Invoked GetMovies Method in controller");
+        {           
 
             var result = await _MovieService.GetMoviesAsync();
 

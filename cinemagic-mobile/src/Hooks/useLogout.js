@@ -12,9 +12,8 @@ export const useLogout = () => {
         await setUserId(null);
         await setUsername(null);
         await SecureStore.setItemAsync('token', '');
-  
 
-        console.log(role);
+
     };
 
 
