@@ -236,8 +236,7 @@ namespace CineMagic.API.Services.MovieService
 
             }
             catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error updating movie with ID {MovieId}", id);
+            {               
                 return new ServiceResponse<bool>
                 {
                     Data = false,

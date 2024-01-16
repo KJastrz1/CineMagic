@@ -18,8 +18,7 @@ const useFetch = (url) => {
             setIsLoading(true);
             try {
                 const token = await SecureStore.getItemAsync('token');
-                if (!token) {
-                    console.log('No credentials found');
+                if (!token) {             
                     return;
                 }
            
