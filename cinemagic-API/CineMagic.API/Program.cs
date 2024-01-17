@@ -69,6 +69,7 @@ builder.Services.AddCors(options =>
 
 
 var app = builder.Build();
+var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
 using (var scope = app.Services.CreateScope())
 {
@@ -78,7 +79,7 @@ using (var scope = app.Services.CreateScope())
     var seeder = services.GetRequiredService<UserSeeder>();
     await seeder.SeedUsersAsync();
 
-    var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+    
     if (environment == "Production")
     {
         var movieSeeder = services.GetRequiredService<MovieSeeder>();
@@ -86,10 +87,11 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
-app.UseCors("MyCorsPolicy");
 
-if (app.Environment.IsDevelopment())
+
+if (environment == "Development")
 {
+    app.UseCors("MyCorsPolicy");
     app.UseSwagger();
     app.UseSwaggerUI();
 }
