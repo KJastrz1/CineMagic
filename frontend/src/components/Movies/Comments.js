@@ -1,9 +1,9 @@
 import useFetch from 'Hooks/useFetch';
-import SessionContext from 'Providers/SessionProvider';
+
 import PageButtons from 'components/Pagination/PageButtons';
-import Myspinner from 'components/Spinners/Myspinner';
+
 import React, { useContext, useState } from 'react';
-import { useIsAuthenticated } from 'react-auth-kit';
+
 import AddComment from './AddComment';
 
 const Comments = ({ movieId }) => {

@@ -1,15 +1,13 @@
-import { ThemeContext } from 'Providers/ThemeProvider';
+
 import React, { useContext } from 'react';
 import { ReactComponent as Moon } from './Moon.svg';
 import { ReactComponent as Sun } from './Sun.svg';
 import './ThemeSwitch.css';
+import { ThemeContext } from 'Context/ThemeContext';
 
 const ThemeSwitch = () => {
 
   const { theme, toggleTheme } = useContext(ThemeContext);
-
-
-
 
   return (
     <div className='dark_mode'>

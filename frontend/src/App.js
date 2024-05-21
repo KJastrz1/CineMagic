@@ -21,37 +21,35 @@ function App() {
 
 
   return (
-    <>
 
+    <div>
+      <Navbar />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        closeOnClick
+        pauseOnFocusLoss
+        draggable
+      />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movies" element={<PrivateRoute Component={Movies}
+          allowedRoles={['Admin', 'User']} />} />
 
-      <div>
-        <Navbar />
-        <ToastContainer
-          position="top-right"
-          autoClose={3000}
-          closeOnClick
-          pauseOnFocusLoss
-          draggable         
-        />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/movies" element={<PrivateRoute Component={Movies}
-            allowedRoles={['Admin', 'User']} />} />
+        <Route path="/addmovie" element={<PrivateRoute Component={AddMovie}
+          allowedRoles={['Admin']} />} />
 
-          <Route path="/addmovie" element={<PrivateRoute Component={AddMovie}
-            allowedRoles={['Admin']} />} />
+        <Route path="/movie/:id" element={<PrivateRoute Component={MovieDetails}
+          allowedRoles={['User', 'Admin']} />} />
 
-          <Route path="/movie/:id" element={<PrivateRoute Component={MovieDetails}
-            allowedRoles={['User', 'Admin']} />} />
+        <Route path="/movie/edit/:id" element={<PrivateRoute Component={MovieEdit}
+          allowedRoles={['Admin']} />} />
 
-          <Route path="/movie/edit/:id" element={<PrivateRoute Component={MovieEdit}
-            allowedRoles={['Admin']} />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+      </Routes>
+    </div>
 
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-        </Routes>
-      </div>
-    </>
   );
 }
 

@@ -1,21 +1,17 @@
 import { AdvancedImage } from '@cloudinary/react';
 import { Cloudinary } from "@cloudinary/url-gen";
 import { fill } from "@cloudinary/url-gen/actions/resize";
-import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import SessionContext from 'Context/AuthContext';
 import useDelete from 'Hooks/useDelete';
 import useFetch from 'Hooks/useFetch';
 import useIsAuthorized from 'Hooks/useIsAuthorized';
-import SessionContext from 'Providers/SessionProvider';
 import ConfirmationModal from 'components/Modals/ConfirmationModal';
-import AddComment from 'components/Movies/AddComment';
 import Comments from 'components/Movies/Comments';
 import MovieRating from 'components/Movies/MovieRating';
 import Myspinner from 'components/Spinners/Myspinner';
-import StarRating from 'components/UI/Rating/StarRating';
-import React, { useContext, useEffect, useState } from 'react';
-import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import React, { useContext,  useState } from 'react';
+import { Link,  useNavigate, useParams } from 'react-router-dom';
+
 
 function MovieDetails() {
   const cloudName = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;

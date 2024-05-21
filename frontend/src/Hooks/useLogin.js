@@ -1,4 +1,4 @@
-import SessionContext from "Providers/SessionProvider";
+import SessionContext from "Context/AuthContext";
 import { useContext, useEffect } from "react";
 import { useSignIn } from "react-auth-kit";
 import { useNavigate } from "react-router-dom";

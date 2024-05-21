@@ -18,11 +18,11 @@ jobs:
 
 
       - name: Restore dependences 
-        run: dotnet restore ./cinemagic-API/CineMagic.API/CineMagic.API.csproj
+        run: dotnet restore ./backend/CineMagic.API/CineMagic.API.csproj
       - name: Build 
-        run: dotnet build ./cinemagic-API/CineMagic.API/CineMagic.API.csproj --no-restore
+        run: dotnet build ./backend/CineMagic.API/CineMagic.API.csproj --no-restore
       - name: Publish
-        run: dotnet publish ./cinemagic-API/CineMagic.API/CineMagic.API.csproj -c Release -o ${{ github.workspace }}/api
+        run: dotnet publish ./backend/CineMagic.API/CineMagic.API.csproj -c Release -o ${{ github.workspace }}/api
       
       - name: upload artifact 
         uses: actions/upload-artifact@v3.1.0

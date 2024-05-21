@@ -1,4 +1,4 @@
-import SessionContext from 'Providers/SessionProvider';
+import SessionContext from 'Context/AuthContext';
 import { useContext } from 'react';
 import { useIsAuthenticated } from 'react-auth-kit';
 

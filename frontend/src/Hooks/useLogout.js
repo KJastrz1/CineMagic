@@ -1,7 +1,7 @@
-import SessionContext from "Providers/SessionProvider";
-import { set } from "date-fns";
-import { useContext, useEffect } from "react";
-import { useSignIn, useSignOut } from "react-auth-kit";
+
+import SessionContext from "Context/AuthContext";
+import { useContext } from "react";
+import {  useSignOut } from "react-auth-kit";
 import { useNavigate } from "react-router-dom";
 
 export const useLogout = () => {

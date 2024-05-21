@@ -1,9 +1,9 @@
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import usePost from 'Hooks/usePost';
-import SessionContext from 'Providers/SessionProvider';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './StarRating.css';
+import SessionContext from 'Context/AuthContext';
 
 const StarRating = ({ movieId, value, setRefetchToggle }) => {
     const [rating, setRating] = useState(value);
