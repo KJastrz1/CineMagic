@@ -1,23 +1,16 @@
-[data-theme="light"]{
+[data-theme="light"] {
   --bs-body-bg: #cec5c5;
   --bs-body-color: #000;
   --bs-nav-link-color: #000;
-  --bs-emphasis-color-rgb: 0,0,0;
-
-
+  --bs-emphasis-color-rgb: 0, 0, 0;
 }
 
-[data-theme="dark"]{
+[data-theme="dark"] {
   --bs-body-bg: #212529;
   --bs-body-color: #fff;
   --bs-nav-link-color: #fff;
-  --bs-emphasis-color-rgb: 255,255,255;
-
-
+  --bs-emphasis-color-rgb: 255, 255, 255;
 }
-
-
-
 
 body {
   margin: 0;

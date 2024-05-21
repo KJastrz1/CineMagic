@@ -1,7 +1,5 @@
 ﻿using Bogus;
 using CineMagic.Shared.Models;
-using System.Collections.Generic;
-using System.Linq;
 using CineMagic.API.Models;
 
 namespace CineMagic.DataSeeder

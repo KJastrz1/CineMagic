@@ -30,7 +30,11 @@ builder.Services.AddScoped<CineMagic.API.Services.FileService>();
 builder.Services.AddScoped<UserSeeder>();
 builder.Services.AddScoped<MovieSeeder>();
 
-string token = builder.Configuration.GetSection("AppSettings:Token").Value;
+var token = builder.Configuration.GetSection("AppSettings:Token").Value;
+if (string.IsNullOrEmpty(token))
+{
+    throw new Exception("Token is missing in appsettings.json");
+}
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
@@ -91,14 +95,13 @@ using (var scope = app.Services.CreateScope())
 
 if (environment == "Development")
 {
-    app.UseCors("MyCorsPolicy");
+
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
-
-
+app.UseCors("MyCorsPolicy");
 
 app.UseAuthentication();
 app.UseAuthorization();

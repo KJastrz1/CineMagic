@@ -1,4 +1,4 @@
-HOW TO RUN
+**HOW TO RUN**
 
 1. Download or clone repository.
 

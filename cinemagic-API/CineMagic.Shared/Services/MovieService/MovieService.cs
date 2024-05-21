@@ -1,24 +1,8 @@
-﻿
-using Microsoft.Extensions.Options;
-using Microsoft.VisualBasic.FileIO;
-using Newtonsoft.Json;
-using CineMagic.Shared;
+﻿using Newtonsoft.Json;
 using CineMagic.Shared.Configuration;
 using CineMagic.Shared.Models;
 using Serilog;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
 using System.Net.Http.Json;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
-using System;
-using System.Windows;
-using Serilog;
-
 
 namespace CineMagic.Shared.Services.MovieService
 {

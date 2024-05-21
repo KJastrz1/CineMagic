@@ -1,9 +1,9 @@
 version: "3.8"
 
 services:
-  api:
+  backend:
     build:
-      context: ./cinemagic-API
+      context: ./backend
     ports:
       - "5093:80"
     depends_on:
