@@ -16,13 +16,13 @@ services:
 
   frontend:
     build:
-      context: ./cinemagic-webapp
+      context: ./frontend
       args:
         - API_URL=http://localhost:5093/api
         - GOOGLE_AUTH_CLIENT_ID=your_google_auth_client_id
         - CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
     depends_on:
-      - api
+      - backend
     ports:
       - "3006:80"
 
